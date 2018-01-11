@@ -350,11 +350,13 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <AdditionalFiles Include="x86\MassPSTExport.exe.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <None Include="x64\MassPSTExport.exe.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Config\" />
-    <Folder Include="x64\" />
-    <Folder Include="x86\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -364,6 +366,42 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gfilogo_all_gen_0.ico" />
+    <AdditionalFiles Include="x86\ExchPstExport.base.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="x86\ExchPstExport.DAL.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="x86\ExchPstExport.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="x86\ExchPstExport.EWS.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="x86\ExchPstExport.EWS.XmlSerializers.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="x86\GFI.Common.Tracing.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="x86\MassPSTExport.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="x86\Redemption.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="x86\Redemption64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <Content Include="x64\ExchPstExport.base.dll" />
+    <Content Include="x64\ExchPstExport.DAL.dll" />
+    <Content Include="x64\ExchPstExport.dll" />
+    <Content Include="x64\ExchPstExport.EWS.dll" />
+    <Content Include="x64\ExchPstExport.EWS.XmlSerializers.dll" />
+    <Content Include="x64\GFI.Common.Tracing.dll" />
+    <Content Include="x64\MassPSTExport.exe" />
+    <Content Include="x64\Redemption.dll" />
+    <Content Include="x64\Redemption64.dll" />
     <None Include="Resources\Yubico-Logo-Small1.png" />
     <None Include="Resources\Yubico-Logo-Small.png" />
   </ItemGroup>
