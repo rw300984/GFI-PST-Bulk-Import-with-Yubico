@@ -75,7 +75,7 @@ scheduling, alerting, monitoring on import jobs. It provides a simple to use GUI
 Because of lack of time and other projects involved it's difficult to develop and maintain all the features 
 and functions. So I hope that with a strong community, additional features, ideas or bugfixes are implemented much faster.
 
-  
+7. The libaries and logos used within the tool potential under copyright of the respective parties.
 
 
 
