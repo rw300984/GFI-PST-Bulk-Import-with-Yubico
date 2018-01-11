@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5010CF9B-10C2-41AD-A62C-62853F03DB3F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>GFI_PST_Bulk_Import</RootNamespace>
+    <AssemblyName>GFI PST Bulk Import</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>GFI PST Bulk Import.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>GFI PST Bulk Import.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>gfilogo_all_gen_0.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MailKit, Version=1.20.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.1.20.0\lib\net451\MailKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ExtendedLinguisticServices, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Sensors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.Sensors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MimeKit, Version=1.20.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.1.20.0\lib\net451\MimeKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="YubicoDotNetClient, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YubicoDotNetClient.1.2.0\lib\net451\YubicoDotNetClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="YubicoDotNetClient" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\frm_2FA_logon.Designer.vb">
+      <DependentUpon>frm_2FA_logon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_2FA_logon.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_config_advanced.Designer.vb">
+      <DependentUpon>frm_config_advanced.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_config_advanced.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_config_auth.Designer.vb">
+      <DependentUpon>frm_config_auth.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_config_auth.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_config_general.Designer.vb">
+      <DependentUpon>frm_config_general.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_config_general.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_config_monitor.Designer.vb">
+      <DependentUpon>frm_config_monitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_config_monitor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_config_owner.Designer.vb">
+      <DependentUpon>frm_config_owner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_config_owner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_config_path.Designer.vb">
+      <DependentUpon>frm_config_path.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_config_path.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_config_tasks.Designer.vb">
+      <DependentUpon>frm_config_tasks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_config_tasks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_dashboard.Designer.vb">
+      <DependentUpon>frm_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_config_menu.Designer.vb">
+      <DependentUpon>frm_config_menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_config_menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_menu.Designer.vb">
+      <DependentUpon>frm_tasks_menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_main.Designer.vb">
+      <DependentUpon>frm_main.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_ondemand.Designer.vb">
+      <DependentUpon>frm_tasks_ondemand.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_ondemand.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule.Designer.vb">
+      <DependentUpon>frm_tasks_schedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule_daily.Designer.vb">
+      <DependentUpon>frm_tasks_schedule_daily.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule_daily.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule_file.Designer.vb">
+      <DependentUpon>frm_tasks_schedule_file.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule_file.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule_monthly.Designer.vb">
+      <DependentUpon>frm_tasks_schedule_monthly.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule_monthly.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule_directory.Designer.vb">
+      <DependentUpon>frm_tasks_schedule_directory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule_directory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule_weekly.Designer.vb">
+      <DependentUpon>frm_tasks_schedule_weekly.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule_weekly.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule_yearly.Designer.vb">
+      <DependentUpon>frm_tasks_schedule_yearly.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_schedule_yearly.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_simulate.Designer.vb">
+      <DependentUpon>frm_tasks_simulate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_tasks_simulate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\alerts.vb" />
+    <Compile Include="Modules\config.vb" />
+    <Compile Include="Modules\crypto.vb" />
+    <Compile Include="Modules\files.vb" />
+    <Compile Include="Modules\Importer.vb" />
+    <Compile Include="Modules\monitor.vb" />
+    <Compile Include="Modules\StartUpClass.vb" />
+    <Compile Include="Modules\tasks.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\frm_2FA_logon.resx">
+      <DependentUpon>frm_2FA_logon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_config_advanced.resx">
+      <DependentUpon>frm_config_advanced.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_config_auth.resx">
+      <DependentUpon>frm_config_auth.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_config_general.resx">
+      <DependentUpon>frm_config_general.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_config_menu.resx">
+      <DependentUpon>frm_config_menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_config_monitor.resx">
+      <DependentUpon>frm_config_monitor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_config_owner.resx">
+      <DependentUpon>frm_config_owner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_config_path.resx">
+      <DependentUpon>frm_config_path.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_config_tasks.resx">
+      <DependentUpon>frm_config_tasks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_dashboard.resx">
+      <DependentUpon>frm_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_tasks_menu.resx">
+      <DependentUpon>frm_tasks_menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_main.resx">
+      <DependentUpon>frm_main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_tasks_ondemand.resx">
+      <DependentUpon>frm_tasks_ondemand.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_tasks_schedule.resx">
+      <DependentUpon>frm_tasks_schedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_tasks_schedule_daily.resx">
+      <DependentUpon>frm_tasks_schedule_daily.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_tasks_schedule_file.resx">
+      <DependentUpon>frm_tasks_schedule_file.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_tasks_schedule_monthly.resx">
+      <DependentUpon>frm_tasks_schedule_monthly.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_tasks_schedule_directory.resx">
+      <DependentUpon>frm_tasks_schedule_directory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_tasks_schedule_weekly.resx">
+      <DependentUpon>frm_tasks_schedule_weekly.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_tasks_schedule_yearly.resx">
+      <DependentUpon>frm_tasks_schedule_yearly.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_tasks_simulate.resx">
+      <DependentUpon>frm_tasks_simulate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="gfilogo_all_gen_0.ico" />
+    <None Include="Resources\Yubico-Logo-Small1.png" />
+    <None Include="Resources\Yubico-Logo-Small.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
